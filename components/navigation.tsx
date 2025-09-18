@@ -38,9 +38,9 @@ const Navigation = () => {
         </Link>
       </div>
 
-      {/* Centered Navigation Pill */}
+      {/* Centered Navigation Pill - Acrylic Transparency */}
       <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50">
-        <div className="bg-[#FCFCFC]/90 backdrop-blur-lg border border-[#034D5A]/20 rounded-full px-6 py-3 shadow-2xl">
+        <div className="bg-white/20 backdrop-blur-md border border-white/30 rounded-full px-6 py-3 shadow-lg hover:shadow-xl transition-all duration-300">
           {/* Navigation Links */}
           <div className="flex items-center space-x-1">
             {navItems.map((item) => (
@@ -49,8 +49,8 @@ const Navigation = () => {
                 href={item.href}
                 className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full ${
                   pathname === item.href
-                    ? "text-white bg-[#FC7A1E] shadow-lg"
-                    : "text-[#034D5A]/80 hover:text-[#FC7A1E] hover:bg-[#33673B]/10"
+                    ? "text-white bg-[#FC7A1E]/80 backdrop-blur-sm shadow-md border border-white/20" 
+                    : "text-[#034D5A]/90 hover:text-[#FC7A1E] hover:bg-white/30 hover:backdrop-blur-sm"
                 }`}
               >
                 {item.label}
@@ -60,9 +60,9 @@ const Navigation = () => {
         </div>
       </nav>
 
-      {/* Mobile Menu Button - Fixed position in top right */}
+      {/* Mobile Menu Button - Acrylic Transparency */}
       <div className="fixed top-6 right-6 z-50 md:hidden">
-        <button className="p-3 text-[#034D5A] hover:text-[#FC7A1E] transition-colors duration-300 bg-[#FCFCFC]/90 backdrop-blur-lg border border-[#034D5A]/20 rounded-full shadow-lg">
+        <button className="p-3 text-[#034D5A]/90 hover:text-[#FC7A1E] transition-all duration-300 bg-white/20 backdrop-blur-md border border-white/30 rounded-full shadow-lg hover:shadow-xl hover:bg-white/30">
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
           </svg>

@@ -66,10 +66,10 @@ export default function HomePage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#FFFFE3]">
+    <div className="min-h-screen relative overflow-hidden">
       <Navigation />
 
-      <main className="pt-24 pb-16 px-6">
+      <main className="pt-24 pb-16 px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Header Section */}
           <div className="text-center mb-16">

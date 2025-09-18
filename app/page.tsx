@@ -1,67 +1,273 @@
-"use client"
+﻿"use client"
 
 import { useState, useEffect } from "react"
-import { ChevronDown } from "lucide-react"
+import Link from "next/link"
 import Navigation from "@/components/navigation"
 
 export default function LandingPage() {
   const [isVisible, setIsVisible] = useState(false)
+  const [titleVisible, setTitleVisible] = useState(false)
+  const [sectionVisible, setSectionVisible] = useState(false)
 
   useEffect(() => {
     setIsVisible(true)
+    setTimeout(() => setTitleVisible(true), 300)
+    setTimeout(() => setSectionVisible(true), 1000)
   }, [])
 
-  const scrollToNext = () => {
-    window.scrollTo({
-      top: window.innerHeight,
-      behavior: "smooth",
-    })
-  }
-
   return (
-    <div className="min-h-screen bg-[#FFFFE3]">
+    <div className="min-h-screen relative overflow-hidden">
       <Navigation />
-
+      
       {/* Hero Section */}
-      <main className="flex flex-col items-center justify-center min-h-screen px-8 relative">
-        <div
-          className={`text-center transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+      <div className="relative z-20 flex flex-col items-center justify-center min-h-screen px-4 text-center">
+        <div 
+          className={`transition-all duration-1000 ease-out transform ${
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+          }`}
         >
-          <h1 className="text-6xl md:text-8xl font-bold mb-8 bg-gradient-to-r from-[#FC7A1E] via-[#33673B] to-[#034D5A] bg-clip-text text-transparent leading-tight">
-            Smart Traffic
+          <h1 className="text-6xl md:text-8xl font-bold mb-6 montserrat-font leading-tight">
+            <span className="text-[#034D5A] drop-shadow-lg">Smart Traffic</span>
             <br />
-            Management System
-          </h1>
-
-          <p className="text-xl md:text-2xl text-[#034D5A]/80 max-w-2xl mx-auto mb-12 leading-relaxed">
-            AI-powered adaptive traffic signals that optimize flow, reduce congestion, and create smarter cities
-          </p>
-        </div>
-
-        {/* Animated Down Arrow */}
-        <button
-          onClick={scrollToNext}
-          className={`absolute bottom-12 transition-all duration-1000 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"} hover:scale-110 group`}
-        >
-          <div className="flex flex-col items-center">
-            <ChevronDown
-              size={48}
-              className="text-[#FC7A1E] animate-bounce group-hover:text-[#33673B] transition-colors duration-300"
-            />
-            <span className="text-sm text-[#034D5A]/60 mt-2 group-hover:text-[#034D5A] transition-colors duration-300">
-              Explore System
+            <span 
+              className={`text-[#FC7A1E] drop-shadow-lg transition-all duration-1000 delay-300 ${
+                titleVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+            >
+              Management System
             </span>
+          </h1>
+          <div className="w-24 h-1 bg-[#FC7A1E] mx-auto mb-8 rounded-full shadow-lg" />
+          <p 
+            className={`text-xl md:text-2xl text-[#034D5A] mb-12 max-w-4xl leading-relaxed transition-all duration-1000 delay-500 ${
+              titleVisible ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            AI-powered adaptive traffic signals that optimize flow,<br />
+            reduce congestion, and create smarter cities
+          </p>
+          
+          <div 
+            className={`transition-all duration-1000 delay-700 ${
+              titleVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+          >
+            <Link
+              href="/simulation"
+              className="inline-flex items-center gap-3 bg-[#FC7A1E] hover:bg-[#e66a0a] text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg group"
+            >
+              <span>🚦</span>
+              Explore System
+              <span className="text-2xl group-hover:translate-x-1 transition-transform duration-300">→</span>
+            </Link>
           </div>
-        </button>
-      </main>
-
-      {/* Placeholder for next section */}
-      <section className="min-h-screen bg-[#FFFFE3] flex items-center justify-center">
-        <div className="text-center">
-          <h2 className="text-4xl font-bold text-[#034D5A] mb-4">Welcome to the Future of Traffic Management</h2>
-          <p className="text-lg text-[#034D5A]/70">Navigate through our system using the menu above</p>
         </div>
-      </section>
+      </div>
+
+      {/* Problem Statement Section */}
+      <div className={`relative z-20 px-4 py-16 transition-all duration-1000 ${sectionVisible ? "opacity-100" : "opacity-0"}`}>
+        <div className="max-w-6xl mx-auto">
+          {/* Problem Statement Details */}
+          <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl p-8 mb-12 border border-white/20">
+            <h2 className="text-4xl font-bold text-[#034D5A] mb-8 text-center montserrat-font">
+              Problem Statement Details
+            </h2>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-6">
+                <div className="bg-[#FC7A1E]/10 p-6 rounded-2xl border-l-4 border-[#FC7A1E]">
+                  <h3 className="text-xl font-bold text-[#034D5A] mb-3">Problem Statement ID</h3>
+                  <p className="text-2xl font-mono text-[#FC7A1E] font-bold">SIH25050</p>
+                </div>
+                
+                <div className="bg-[#034D5A]/10 p-6 rounded-2xl border-l-4 border-[#034D5A]">
+                  <h3 className="text-xl font-bold text-[#034D5A] mb-3">Organization</h3>
+                  <p className="text-lg text-gray-700">Government of Odisha</p>
+                  <p className="text-sm text-gray-600">Electronics & IT Department</p>
+                </div>
+
+                <div className="bg-[#FC7A1E]/10 p-6 rounded-2xl border-l-4 border-[#FC7A1E]">
+                  <h3 className="text-xl font-bold text-[#034D5A] mb-3">Category & Theme</h3>
+                  <p className="text-lg text-gray-700">Software</p>
+                  <p className="text-sm text-gray-600">Transportation & Logistics</p>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <div className="bg-[#034D5A]/10 p-6 rounded-2xl border-l-4 border-[#034D5A]">
+                  <h3 className="text-xl font-bold text-[#034D5A] mb-3">Description</h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    Design an AI-based traffic management system to optimize signal timings and reduce congestion in urban areas. 
+                    The system should analyze real-time traffic data from cameras and IoT sensors to predict and mitigate bottlenecks.
+                  </p>
+                </div>
+
+                <div className="bg-[#FC7A1E]/10 p-6 rounded-2xl border-l-4 border-[#FC7A1E]">
+                  <h3 className="text-xl font-bold text-[#034D5A] mb-3">Expected Outcome</h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    A software prototype reducing average commute time by 10% in a simulated urban environment, 
+                    with a dashboard for traffic authorities to monitor and control signals.
+                  </p>
+                </div>
+
+                <div className="bg-[#034D5A]/10 p-6 rounded-2xl border-l-4 border-[#034D5A]">
+                  <h3 className="text-xl font-bold text-[#034D5A] mb-3">Technical Feasibility</h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    Uses computer vision (e.g., OpenCV) and reinforcement learning for traffic prediction, 
+                    integrated with existing traffic camera networks.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Stakeholders Section */}
+          <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl p-8 mb-12 border border-white/20">
+            <h2 className="text-4xl font-bold text-[#034D5A] mb-8 text-center montserrat-font">
+              Key Stakeholders
+            </h2>
+            
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-[#034D5A]/10 to-[#FC7A1E]/10 p-6 rounded-2xl text-center border border-white/30">
+                <div className="text-4xl mb-4">🏛️</div>
+                <h3 className="text-xl font-bold text-[#034D5A] mb-3">Government Authorities</h3>
+                <p className="text-gray-700">Traffic police, municipal corporations, and urban planning departments</p>
+              </div>
+              
+              <div className="bg-gradient-to-br from-[#FC7A1E]/10 to-[#034D5A]/10 p-6 rounded-2xl text-center border border-white/30">
+                <div className="text-4xl mb-4">🚗</div>
+                <h3 className="text-xl font-bold text-[#034D5A] mb-3">Citizens & Commuters</h3>
+                <p className="text-gray-700">Daily commuters, public transport users, and emergency services</p>
+              </div>
+              
+              <div className="bg-gradient-to-br from-[#034D5A]/10 to-[#FC7A1E]/10 p-6 rounded-2xl text-center border border-white/30">
+                <div className="text-4xl mb-4">🏢</div>
+                <h3 className="text-xl font-bold text-[#034D5A] mb-3">Technology Partners</h3>
+                <p className="text-gray-700">IoT sensor manufacturers, AI companies, and system integrators</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Current System Analysis */}
+          <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl p-8 mb-12 border border-white/20">
+            <h2 className="text-4xl font-bold text-[#034D5A] mb-8 text-center montserrat-font">
+              Current System vs Our Solution
+            </h2>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-red-50 p-6 rounded-2xl border border-red-200">
+                <h3 className="text-2xl font-bold text-red-700 mb-4 flex items-center">
+                  <span className="mr-3">❌</span>
+                  Current Challenges
+                </h3>
+                <ul className="space-y-3 text-gray-700">
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-2">•</span>
+                    Fixed-time traffic signals causing unnecessary delays
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-2">•</span>
+                    No real-time adaptation to traffic conditions
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-2">•</span>
+                    Lack of coordination between intersections
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-2">•</span>
+                    Manual monitoring and control systems
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-2">•</span>
+                    Increased fuel consumption and emissions
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-green-50 p-6 rounded-2xl border border-green-200">
+                <h3 className="text-2xl font-bold text-green-700 mb-4 flex items-center">
+                  <span className="mr-3">✅</span>
+                  Our Smart Solution
+                </h3>
+                <ul className="space-y-3 text-gray-700">
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2">•</span>
+                    AI-powered adaptive signal timing optimization
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2">•</span>
+                    Real-time traffic flow analysis and prediction
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2">•</span>
+                    Coordinated intersection management system
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2">•</span>
+                    Automated monitoring with smart dashboard
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2">•</span>
+                    Reduced emissions and improved city sustainability
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* SIH Competition Info */}
+          <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl p-8 border border-white/20">
+            <h2 className="text-4xl font-bold text-[#034D5A] mb-8 text-center montserrat-font">
+              Smart India Hackathon 2025
+            </h2>
+            
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              <div className="text-center p-6 bg-[#FC7A1E]/10 rounded-2xl">
+                <div className="text-3xl font-bold text-[#FC7A1E] mb-2">212</div>
+                <p className="text-[#034D5A] font-medium">Total Problem Statements</p>
+              </div>
+              <div className="text-center p-6 bg-[#034D5A]/10 rounded-2xl">
+                <div className="text-3xl font-bold text-[#034D5A] mb-2">66</div>
+                <p className="text-[#034D5A] font-medium">Hardware Projects</p>
+              </div>
+              <div className="text-center p-6 bg-[#FC7A1E]/10 rounded-2xl">
+                <div className="text-3xl font-bold text-[#FC7A1E] mb-2">146</div>
+                <p className="text-[#034D5A] font-medium">Software Projects</p>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <h3 className="text-2xl font-bold text-[#034D5A] mb-4">Our Problem Statement: SIH25050</h3>
+              <p className="text-lg text-gray-700 mb-6">
+                "Smart Traffic Management System for Urban Congestion" by Government of Odisha
+              </p>
+              <div className="flex justify-center gap-4">
+                <span className="bg-[#034D5A] text-white px-4 py-2 rounded-full text-sm font-medium">Software Category</span>
+                <span className="bg-[#FC7A1E] text-white px-4 py-2 rounded-full text-sm font-medium">Transportation & Logistics</span>
+                <span className="bg-green-600 text-white px-4 py-2 rounded-full text-sm font-medium">4 Teams Submitted</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Contact Information */}
+      <div className="relative z-20 bg-[#034D5A]/90 backdrop-blur-md text-white py-12">
+        <div className="max-w-4xl mx-auto text-center px-4">
+          <h3 className="text-2xl font-bold mb-6">Smart India Hackathon 2025</h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 className="font-semibold mb-2">Contact Numbers</h4>
+              <p>+91 11 29581239, +91 11 29581235</p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-2">Email Support</h4>
+              <p>sih@aicte-india.org, hackathon@aicte-india.org</p>
+            </div>
+          </div>
+          <p className="mt-6 text-sm opacity-80">© 2025-26 Smart India Hackathon. All rights reserved</p>
+        </div>
+      </div>
     </div>
   )
 }
