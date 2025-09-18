@@ -1,83 +1,53 @@
 "use client"
 
 import { useState } from "react"
-import { Users, BookOpen, Award, Mail, Linkedin, Github } from "lucide-react"
+import { Users, BookOpen, Award } from "lucide-react"
 import Navigation from "@/components/navigation"
 
 interface TeamMember {
   id: string
   name: string
   role: string
-  studentId: string
-  specialization: string
-  email: string
+  description: string
 }
 
 const teamMembers: TeamMember[] = [
   {
     id: "1",
-    name: "Alex Chen",
+    name: "Member 1",
     role: "Project Lead & AI Specialist",
-    studentId: "CS2021001",
-    specialization: "Machine Learning & Computer Vision",
-    email: "alex.chen@university.edu",
+    description: "Leading the team with expertise in machine learning algorithms and computer vision for traffic analysis and optimization."
   },
   {
     id: "2",
-    name: "Sarah Johnson",
+    name: "Member 2",
     role: "Backend Developer",
-    studentId: "CS2021002",
-    specialization: "Distributed Systems & APIs",
-    email: "sarah.johnson@university.edu",
+    description: "Developing robust server-side architecture and APIs for real-time traffic data processing and system integration."
   },
   {
     id: "3",
-    name: "Michael Rodriguez",
+    name: "Member 3",
     role: "Frontend Developer",
-    studentId: "CS2021003",
-    specialization: "React & User Experience",
-    email: "michael.rodriguez@university.edu",
+    description: "Creating intuitive user interfaces and interactive dashboards for traffic management and monitoring systems."
   },
   {
     id: "4",
-    name: "Emily Zhang",
+    name: "Member 4",
     role: "Data Scientist",
-    studentId: "CS2021004",
-    specialization: "Traffic Analytics & Optimization",
-    email: "emily.zhang@university.edu",
+    description: "Analyzing traffic patterns and developing predictive models to optimize signal timing and reduce congestion."
   },
   {
     id: "5",
-    name: "David Kim",
+    name: "Member 5",
     role: "Systems Architect",
-    studentId: "CS2021005",
-    specialization: "IoT & Hardware Integration",
-    email: "david.kim@university.edu",
+    description: "Designing scalable infrastructure and IoT integration for comprehensive traffic management solutions."
   },
   {
     id: "6",
-    name: "Lisa Thompson",
+    name: "Member 6",
     role: "UI/UX Designer",
-    studentId: "CS2021006",
-    specialization: "Interface Design & Usability",
-    email: "lisa.thompson@university.edu",
-  },
-  {
-    id: "7",
-    name: "James Wilson",
-    role: "DevOps Engineer",
-    studentId: "CS2021007",
-    specialization: "Cloud Infrastructure & Deployment",
-    email: "james.wilson@university.edu",
-  },
-  {
-    id: "8",
-    name: "Maria Garcia",
-    role: "Quality Assurance Lead",
-    studentId: "CS2021008",
-    specialization: "Testing & System Validation",
-    email: "maria.garcia@university.edu",
-  },
+    description: "Crafting user-centered designs and ensuring optimal user experience across all traffic management interfaces."
+  }
 ]
 
 export default function AboutPage() {
@@ -109,7 +79,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {teamMembers.map((member, index) => (
                 <div
                   key={member.id}
@@ -119,65 +89,22 @@ export default function AboutPage() {
                   onMouseLeave={() => setHoveredCard(null)}
                 >
                   <div
-                    className={`bg-[#FCFCFC] rounded-2xl shadow-lg border border-[#034D5A]/10 overflow-hidden transition-all duration-300 ${
+                    className={`bg-gradient-to-br from-yellow-50 to-amber-50 rounded-2xl shadow-lg border border-amber-200 overflow-hidden transition-all duration-300 h-full ${
                       hoveredCard === member.id
-                        ? "shadow-2xl border-[#FC7A1E]/30 transform -translate-y-2"
-                        : "hover:shadow-xl hover:border-[#FC7A1E]/20"
+                        ? "shadow-2xl border-amber-400 transform -translate-y-2"
+                        : "hover:shadow-xl hover:border-amber-300"
                     }`}
                   >
-                    {/* Avatar Placeholder */}
-                    <div className="h-48 bg-gradient-to-br from-[#FC7A1E]/20 via-[#33673B]/20 to-[#034D5A]/20 relative overflow-hidden">
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div
-                          className={`w-24 h-24 bg-gradient-to-br from-[#FC7A1E] to-[#33673B] rounded-full flex items-center justify-center text-[#FCFCFC] text-2xl font-bold transition-all duration-300 ${
-                            hoveredCard === member.id ? "scale-110" : ""
-                          }`}
-                        >
-                          {member.name
-                            .split(" ")
-                            .map((n) => n[0])
-                            .join("")}
-                        </div>
-                      </div>
-                      {/* Animated background pattern */}
-                      <div className="absolute inset-0 opacity-10">
-                        <div className="grid grid-cols-6 grid-rows-6 h-full w-full">
-                          {Array.from({ length: 36 }).map((_, i) => (
-                            <div
-                              key={i}
-                              className={`border border-[#034D5A]/20 transition-all duration-500 ${
-                                hoveredCard === member.id && (i + index) % 4 === 0 ? "bg-[#FC7A1E]/30" : ""
-                              }`}
-                            />
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-
                     {/* Card Content */}
-                    <div className="p-6">
+                    <div className="p-6 h-full flex flex-col">
                       <div className="text-center mb-4">
-                        <h3 className="text-xl font-bold text-[#034D5A] mb-2">{member.name}</h3>
-                        <p className="text-[#FC7A1E] font-semibold mb-1">{member.role}</p>
-                        <p className="text-[#034D5A]/60 text-sm font-mono">{member.studentId}</p>
+                        <h3 className="text-xl font-bold text-amber-800 mb-2">{member.name}</h3>
+                        <p className="text-amber-600 font-semibold mb-4">{member.role}</p>
                       </div>
 
-                      <div className="space-y-3">
-                        <div className="bg-[#034D5A]/5 rounded-lg p-3">
-                          <p className="text-xs text-[#034D5A]/70 mb-1">Specialization</p>
-                          <p className="text-sm text-[#034D5A] font-medium">{member.specialization}</p>
-                        </div>
-
-                        <div className="flex items-center justify-center space-x-3 pt-2">
-                          <button className="p-2 bg-[#FC7A1E]/10 hover:bg-[#FC7A1E]/20 rounded-lg transition-colors duration-200">
-                            <Mail className="w-4 h-4 text-[#FC7A1E]" />
-                          </button>
-                          <button className="p-2 bg-[#33673B]/10 hover:bg-[#33673B]/20 rounded-lg transition-colors duration-200">
-                            <Linkedin className="w-4 h-4 text-[#33673B]" />
-                          </button>
-                          <button className="p-2 bg-[#034D5A]/10 hover:bg-[#034D5A]/20 rounded-lg transition-colors duration-200">
-                            <Github className="w-4 h-4 text-[#034D5A]" />
-                          </button>
+                      <div className="flex-grow">
+                        <div className="bg-amber-100 rounded-lg p-4">
+                          <p className="text-amber-700 text-sm leading-relaxed">{member.description}</p>
                         </div>
                       </div>
                     </div>
