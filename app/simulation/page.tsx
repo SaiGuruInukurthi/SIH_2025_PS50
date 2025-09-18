@@ -38,18 +38,18 @@ export default function SimulationPage() {
     <div className="min-h-screen relative overflow-hidden">
       <Navigation />
       
-      <div className="relative z-20 pt-20 px-4">
-        <div className="max-w-7xl mx-auto">
+      <div className="relative z-20 pt-32 px-4">
+        <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="bg-white/90 backdrop-blur-md rounded-2xl p-6 mb-6 border border-white/20">
-            <h1 className="text-3xl font-bold text-[#034D5A] montserrat-font">Traffic Simulation Dashboard</h1>
-            <p className="text-gray-600 mt-2">Live traffic monitoring and AI-powered intersection management</p>
+          <div className="bg-[#FFFFE3]/30 backdrop-blur-md rounded-3xl p-8 mb-8 border border-[#FFFFE3]/40 shadow-2xl text-center">
+            <h1 className="text-4xl font-bold text-[#034D5A] montserrat-font mb-3">Traffic Simulation Dashboard</h1>
+            <p className="text-[#034D5A] text-lg">Live traffic monitoring and AI-powered intersection management</p>
           </div>
 
           {/* Camera Feeds Grid (2x2) */}
           <div className="grid grid-cols-2 gap-6 mb-6">
             {cameraFeeds.map((camera) => (
-              <div key={camera.id} className="bg-white/90 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+              <div key={camera.id} className="bg-[#FFFFE3]/30 backdrop-blur-md rounded-3xl p-6 border border-[#FFFFE3]/40 shadow-2xl">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-lg font-bold text-[#034D5A] flex items-center gap-2">
                     <Camera size={20} />
@@ -90,14 +90,14 @@ export default function SimulationPage() {
                 </div>
 
                 <div className="mt-3 text-center">
-                  <span className="text-sm text-gray-600">{camera.position}</span>
+                  <span className="text-sm text-[#034D5A]">{camera.position}</span>
                 </div>
               </div>
             ))}
           </div>
 
           {/* Environment Simulation Window */}
-          <div className="bg-white/90 backdrop-blur-md rounded-2xl p-6 mb-6 border border-white/20">
+          <div className="bg-[#FFFFE3]/30 backdrop-blur-md rounded-3xl p-6 mb-6 border border-[#FFFFE3]/40 shadow-2xl">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-xl font-bold text-[#034D5A] flex items-center gap-2">
                 <Settings size={24} />
@@ -145,7 +145,7 @@ export default function SimulationPage() {
           </div>
 
           {/* Control Buttons */}
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-3 gap-6 mb-16">
             {/* Start/Stop Environment */}
             <button
               onClick={() => setIsEnvRunning(!isEnvRunning)}
@@ -170,7 +170,7 @@ export default function SimulationPage() {
               <div className="text-2xl">{getIntersectionTypeIcon(intersectionType)}</div>
               <div className="text-center">
                 <div>Switch Intersection</div>
-                <div className="text-sm opacity-90 font-normal">{intersectionType}  {getNextIntersectionType(intersectionType)}</div>
+                <div className="text-sm opacity-90 font-normal">{intersectionType} → {getNextIntersectionType(intersectionType)}</div>
               </div>
             </button>
 
