@@ -53,14 +53,24 @@ export default function LandingPage() {
               titleVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            <Link
-              href="/simulation"
-              className="inline-flex items-center gap-3 bg-[#FC7A1E] hover:bg-[#e66a0a] text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg group"
-            >
-              <span>🚦</span>
-              Explore System
-              <span className="text-2xl group-hover:translate-x-1 transition-transform duration-300">→</span>
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
+              <Link
+                href="/simulation"
+                className="inline-flex items-center gap-3 bg-[#FC7A1E] hover:bg-[#e66a0a] text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg group"
+              >
+                <span>🚦</span>
+                Explore System
+                <span className="text-2xl group-hover:translate-x-1 transition-transform duration-300">→</span>
+              </Link>
+              <Link
+                href="/analytics"
+                className="inline-flex items-center gap-3 bg-[#034D5A] hover:bg-[#023a47] text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg group"
+              >
+                <span>📊</span>
+                View Analytics
+                <span className="text-2xl group-hover:translate-x-1 transition-transform duration-300">→</span>
+              </Link>
+            </div>
           </div>
 
           {/* Animated Scroll Indicator */}
