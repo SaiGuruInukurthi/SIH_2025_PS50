@@ -171,13 +171,9 @@ export default function SolutionPage() {
       <main className="pt-24 pb-16 px-6">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-amber-800 to-amber-900 bg-clip-text text-transparent">
-              Our Solution
-            </h1>
-            <p className="text-xl text-amber-800 max-w-3xl mx-auto leading-relaxed">
-              An intelligent workflow that transforms traditional traffic management through AI-powered automation
-            </p>
+          <div className="bg-[#FFFFE3]/30 backdrop-blur-md rounded-3xl p-8 mb-8 border border-[#FFFFE3]/40 shadow-2xl text-center">
+            <h1 className="text-4xl font-bold text-[#034D5A] montserrat-font mb-3">Our Solution</h1>
+            <p className="text-[#034D5A] text-lg">An intelligent workflow that transforms traditional traffic management through AI-powered automation</p>
           </div>
 
           {/* Timeline Container */}
@@ -287,23 +283,6 @@ export default function SolutionPage() {
                     <li className="flex items-start gap-2"><span className="text-amber-500 mt-1">✓</span><span>Automated incident detection</span></li>
                   </ul>
                 </div>
-              </div>
-            </div>
-          </div>
-          
-          {/* CTA Section */}
-          <div className="text-center mt-20">
-            <div className="inline-block bg-gradient-to-r from-amber-400 to-amber-600 p-1 rounded-2xl">
-              <div className="bg-white rounded-2xl px-8 py-12">
-                <h3 className="text-3xl font-bold mb-4 bg-gradient-to-r from-amber-500 to-amber-700 bg-clip-text text-transparent">
-                  Ready to Transform Your City's Traffic?
-                </h3>
-                <p className="text-amber-700 mb-8 max-w-2xl mx-auto">
-                  Join the smart traffic revolution and experience the future of urban mobility management.
-                </p>
-                <button className="px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-semibold rounded-full hover:from-amber-600 hover:to-amber-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
-                  View Live Simulation →
-                </button>
               </div>
             </div>
           </div>

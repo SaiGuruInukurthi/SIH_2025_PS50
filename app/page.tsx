@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import { ChevronDown } from "lucide-react"
 import Navigation from "@/components/navigation"
 
 export default function LandingPage() {
@@ -20,7 +21,7 @@ export default function LandingPage() {
       <Navigation />
       
       {/* Hero Section */}
-      <div className="relative z-20 flex flex-col items-center justify-center min-h-screen px-4 text-center">
+      <div className="relative z-20 flex flex-col items-center justify-center min-h-screen px-4 text-center pt-32">
         <div 
           className={`transition-all duration-1000 ease-out transform ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
@@ -39,7 +40,7 @@ export default function LandingPage() {
           </h1>
           <div className="w-24 h-1 bg-[#FC7A1E] mx-auto mb-8 rounded-full shadow-lg" />
           <p 
-            className={`text-xl md:text-2xl text-[#034D5A] mb-12 max-w-4xl leading-relaxed transition-all duration-1000 delay-500 ${
+            className={`text-xl md:text-2xl text-[#034D5A] mb-12 max-w-4xl leading-relaxed text-center mx-auto transition-all duration-1000 delay-500 ${
               titleVisible ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -60,6 +61,17 @@ export default function LandingPage() {
               Explore System
               <span className="text-2xl group-hover:translate-x-1 transition-transform duration-300">→</span>
             </Link>
+          </div>
+
+          {/* Animated Scroll Indicator */}
+          <div 
+            className={`mt-16 flex justify-center transition-all duration-1000 delay-1000 ${
+              titleVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+          >
+            <div className="backdrop-blur-md bg-white/10 p-4 rounded-full border border-white/20 shadow-lg hover:bg-white/20 transition-all duration-300 cursor-pointer animate-bounce">
+              <ChevronDown className="w-6 h-6 text-[#034D5A]" strokeWidth={3} />
+            </div>
           </div>
         </div>
       </div>

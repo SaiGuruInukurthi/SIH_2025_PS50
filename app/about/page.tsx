@@ -57,14 +57,14 @@ export default function AboutPage() {
     <div className="min-h-screen relative overflow-hidden">
       <Navigation />
 
-      <main className="pt-24 pb-16 px-6 relative z-10">
+      <main className="pt-40 pb-16 px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#FC7A1E] via-[#33673B] to-[#034D5A] bg-clip-text text-transparent">
+          <div className="backdrop-blur-md bg-white/10 rounded-3xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)] border border-white/20 p-8 mb-16 text-center">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-[#33673B]">
               About Our Team
             </h1>
-            <p className="text-xl text-[#034D5A]/70 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-[#034D5A] max-w-3xl mx-auto leading-relaxed">
               Meet the innovative minds behind the Smart Traffic Management System - a dedicated team of students
               passionate about creating smarter, more efficient cities
             </p>

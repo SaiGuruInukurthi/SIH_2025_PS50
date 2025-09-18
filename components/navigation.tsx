@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 
 const Navigation = () => {
@@ -27,14 +28,17 @@ const Navigation = () => {
   return (
     <>
       {/* Logo - Fixed position in top left - Always visible */}
-      <div className="fixed top-6 left-6 z-50">
-        <Link href="/" className="flex items-center space-x-2 group">
-          <div className="w-10 h-10 bg-[#FC7A1E] rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <div className="w-6 h-6 bg-[#FCFCFC] rounded-sm"></div>
+      <div className="fixed top-4 left-6 z-50">
+        <Link href="/" className="group">
+          <div className="relative w-36 h-36 group-hover:scale-110 transition-transform duration-300">
+            <Image
+              src="/machine-maniac-logo.png"
+              alt="Machine Maniacs Logo"
+              width={144}
+              height={144}
+              className="object-contain"
+            />
           </div>
-          <span className="text-xl font-bold text-[#034D5A] group-hover:text-[#FC7A1E] transition-colors duration-300 select-none">
-            Machine Maniacs
-          </span>
         </Link>
       </div>
 
