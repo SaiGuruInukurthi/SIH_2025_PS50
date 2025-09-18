@@ -68,7 +68,7 @@ export default function LandingPage() {
       <div className={`relative z-20 px-4 py-16 transition-all duration-1000 ${sectionVisible ? "opacity-100" : "opacity-0"}`}>
         <div className="max-w-6xl mx-auto">
           {/* Problem Statement Details */}
-          <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl p-8 mb-12 border border-white/20">
+          <div className="bg-[#FFFFE3]/30 backdrop-blur-md rounded-3xl shadow-2xl p-8 mb-12 border border-[#FFFFE3]/40">
             <h2 className="text-4xl font-bold text-[#034D5A] mb-8 text-center montserrat-font">
               Problem Statement Details
             </h2>
@@ -122,7 +122,7 @@ export default function LandingPage() {
           </div>
 
           {/* Stakeholders Section */}
-          <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl p-8 mb-12 border border-white/20">
+          <div className="bg-[#FFFFE3]/30 backdrop-blur-md rounded-3xl shadow-2xl p-8 mb-12 border border-[#FFFFE3]/40">
             <h2 className="text-4xl font-bold text-[#034D5A] mb-8 text-center montserrat-font">
               Key Stakeholders
             </h2>
@@ -149,7 +149,7 @@ export default function LandingPage() {
           </div>
 
           {/* Current System Analysis */}
-          <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl p-8 mb-12 border border-white/20">
+          <div className="bg-[#FFFFE3]/30 backdrop-blur-md rounded-3xl shadow-2xl p-8 mb-12 border border-[#FFFFE3]/40">
             <h2 className="text-4xl font-bold text-[#034D5A] mb-8 text-center montserrat-font">
               Current System vs Our Solution
             </h2>
@@ -216,7 +216,7 @@ export default function LandingPage() {
           </div>
 
           {/* SIH Competition Info */}
-          <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl p-8 border border-white/20">
+          <div className="bg-[#FFFFE3]/30 backdrop-blur-md rounded-3xl shadow-2xl p-8 border border-[#FFFFE3]/40">
             <h2 className="text-4xl font-bold text-[#034D5A] mb-8 text-center montserrat-font">
               Smart India Hackathon 2025
             </h2>
