@@ -14,39 +14,39 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     id: "1",
-    name: "Member 1",
-    role: "Project Lead & AI Specialist",
-    description: "Leading the team with expertise in machine learning algorithms and computer vision for traffic analysis and optimization."
+    name: "Harsha",
+    role: "Developer 1: YOLO Model & AI Integration",
+    description: "Specializing in YOLO object detection models and AI integration for real-time traffic analysis and vehicle detection systems."
   },
   {
     id: "2",
-    name: "Member 2",
-    role: "Backend Developer",
-    description: "Developing robust server-side architecture and APIs for real-time traffic data processing and system integration."
+    name: "Janani",
+    role: "Designer: Visuals, Diagrams, Mockups",
+    description: "Creating comprehensive visual designs, system diagrams, and interactive mockups for the traffic management interface."
   },
   {
     id: "3",
-    name: "Member 3",
-    role: "Frontend Developer",
-    description: "Creating intuitive user interfaces and interactive dashboards for traffic management and monitoring systems."
+    name: "Guru",
+    role: "Developer 3: Frontend Dashboard (UI/UX)",
+    description: "Building responsive frontend dashboards with intuitive UI/UX design for traffic monitoring and control systems."
   },
   {
     id: "4",
-    name: "Member 4",
-    role: "Data Scientist",
-    description: "Analyzing traffic patterns and developing predictive models to optimize signal timing and reduce congestion."
+    name: "Nandith",
+    role: "Developer 2: Backend (Flask/Python, Priority Queue Algorithm)",
+    description: "Developing robust backend infrastructure using Flask/Python and implementing priority queue algorithms for traffic optimization."
   },
   {
     id: "5",
-    name: "Member 5",
-    role: "Systems Architect",
-    description: "Designing scalable infrastructure and IoT integration for comprehensive traffic management solutions."
+    name: "Vihaan",
+    role: "Researcher: Traffic Management & Odisha Urban Issues",
+    description: "Conducting in-depth research on traffic management solutions and analyzing specific urban transportation challenges in Odisha."
   },
   {
     id: "6",
-    name: "Member 6",
-    role: "UI/UX Designer",
-    description: "Crafting user-centered designs and ensuring optimal user experience across all traffic management interfaces."
+    name: "Preetham",
+    role: "Researcher: Traffic Management & Odisha Urban Issues",
+    description: "Researching traffic flow patterns and urban mobility issues to develop data-driven solutions for Odisha's transportation network."
   }
 ]
 
@@ -89,22 +89,22 @@ export default function AboutPage() {
                   onMouseLeave={() => setHoveredCard(null)}
                 >
                   <div
-                    className={`bg-gradient-to-br from-yellow-50 to-amber-50 rounded-2xl shadow-lg border border-amber-200 overflow-hidden transition-all duration-300 h-full ${
+                    className={`backdrop-blur-md bg-white/10 rounded-2xl shadow-2xl border border-white/20 overflow-hidden transition-all duration-300 h-full ${
                       hoveredCard === member.id
-                        ? "shadow-2xl border-amber-400 transform -translate-y-2"
-                        : "hover:shadow-xl hover:border-amber-300"
+                        ? "shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] border-[#FC7A1E]/50 transform -translate-y-2"
+                        : "hover:shadow-[0_20px_40px_-8px_rgba(0,0,0,0.4)] hover:border-white/30"
                     }`}
                   >
                     {/* Card Content */}
                     <div className="p-6 h-full flex flex-col">
                       <div className="text-center mb-4">
-                        <h3 className="text-xl font-bold text-amber-800 mb-2">{member.name}</h3>
-                        <p className="text-amber-600 font-semibold mb-4">{member.role}</p>
+                        <h3 className="text-xl font-bold text-[#FC7A1E] mb-2">{member.name}</h3>
+                        <p className="text-[#034D5A] font-semibold mb-4">{member.role}</p>
                       </div>
 
                       <div className="flex-grow">
-                        <div className="bg-amber-100 rounded-lg p-4">
-                          <p className="text-amber-700 text-sm leading-relaxed">{member.description}</p>
+                        <div className="backdrop-blur-sm bg-white/20 border border-white/30 rounded-lg p-4">
+                          <p className="text-black text-sm leading-relaxed font-medium">{member.description}</p>
                         </div>
                       </div>
                     </div>
