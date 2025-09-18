@@ -131,7 +131,7 @@ export default function SimulationPage() {
   )
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#FCFCFC] to-[#034D5A]/5">
+    <div className="min-h-screen bg-[#FFFFE3]">
       <Navigation />
 
       <main className="pt-24 pb-16 px-6">

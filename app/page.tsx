@@ -19,7 +19,7 @@ export default function LandingPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#FCFCFC] to-[#034D5A]/5">
+    <div className="min-h-screen bg-[#FFFFE3]">
       <Navigation />
 
       {/* Hero Section */}
@@ -56,7 +56,7 @@ export default function LandingPage() {
       </main>
 
       {/* Placeholder for next section */}
-      <section className="min-h-screen bg-[#FCFCFC] flex items-center justify-center">
+      <section className="min-h-screen bg-[#FFFFE3] flex items-center justify-center">
         <div className="text-center">
           <h2 className="text-4xl font-bold text-[#034D5A] mb-4">Welcome to the Future of Traffic Management</h2>
           <p className="text-lg text-[#034D5A]/70">Navigate through our system using the menu above</p>
