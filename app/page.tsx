@@ -214,58 +214,6 @@ export default function LandingPage() {
               </div>
             </div>
           </div>
-
-          {/* SIH Competition Info */}
-          <div className="bg-[#FFFFE3]/30 backdrop-blur-md rounded-3xl shadow-2xl p-8 border border-[#FFFFE3]/40">
-            <h2 className="text-4xl font-bold text-[#034D5A] mb-8 text-center montserrat-font">
-              Smart India Hackathon 2025
-            </h2>
-            
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <div className="text-center p-6 bg-[#FC7A1E]/10 rounded-2xl">
-                <div className="text-3xl font-bold text-[#FC7A1E] mb-2">212</div>
-                <p className="text-[#034D5A] font-medium">Total Problem Statements</p>
-              </div>
-              <div className="text-center p-6 bg-[#034D5A]/10 rounded-2xl">
-                <div className="text-3xl font-bold text-[#034D5A] mb-2">66</div>
-                <p className="text-[#034D5A] font-medium">Hardware Projects</p>
-              </div>
-              <div className="text-center p-6 bg-[#FC7A1E]/10 rounded-2xl">
-                <div className="text-3xl font-bold text-[#FC7A1E] mb-2">146</div>
-                <p className="text-[#034D5A] font-medium">Software Projects</p>
-              </div>
-            </div>
-
-            <div className="text-center">
-              <h3 className="text-2xl font-bold text-[#034D5A] mb-4">Our Problem Statement: SIH25050</h3>
-              <p className="text-lg text-gray-700 mb-6">
-                "Smart Traffic Management System for Urban Congestion" by Government of Odisha
-              </p>
-              <div className="flex justify-center gap-4">
-                <span className="bg-[#034D5A] text-white px-4 py-2 rounded-full text-sm font-medium">Software Category</span>
-                <span className="bg-[#FC7A1E] text-white px-4 py-2 rounded-full text-sm font-medium">Transportation & Logistics</span>
-                <span className="bg-green-600 text-white px-4 py-2 rounded-full text-sm font-medium">4 Teams Submitted</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Contact Information */}
-      <div className="relative z-20 bg-[#034D5A]/90 backdrop-blur-md text-white py-12">
-        <div className="max-w-4xl mx-auto text-center px-4">
-          <h3 className="text-2xl font-bold mb-6">Smart India Hackathon 2025</h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <h4 className="font-semibold mb-2">Contact Numbers</h4>
-              <p>+91 11 29581239, +91 11 29581235</p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-2">Email Support</h4>
-              <p>sih@aicte-india.org, hackathon@aicte-india.org</p>
-            </div>
-          </div>
-          <p className="mt-6 text-sm opacity-80">© 2025-26 Smart India Hackathon. All rights reserved</p>
         </div>
       </div>
     </div>
